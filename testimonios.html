@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Testimonios</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Contenedor principal */
+        .content-wrapper {
+            display: flex;
+            margin-top: 70px;
+            padding: 1rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+            margin-right: 1rem;
+            width: 250px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #007BFF;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1>Testimonios</h1>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <h2>Filtros</h2>
+            <ul>
+                <li><a href="#">Todos</a></li>
+                <li><a href="#">Positivos</a></li>
+                <li><a href="#">Negativos</a></li>
+                <li><a href="#">Recientes</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section class="main-content">
+                <div class="testimonial-card" data-type="positivo">
+                    <h3>Juan Pérez</h3>
+                    <p>¡Excelente servicio! Muy recomendado.</p>
+                </div>
+                <div class="testimonial-card" data-type="neutral">
+                    <h3>María López</h3>
+                    <p>La experiencia fue buena, pero podría mejorar.</p>
+                </div>
+                <div class="testimonial-card" data-type="negativo">
+                    <h3>Carlos García</h3>
+                    <p>No quedé satisfecho con el resultado.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
